@@ -7,26 +7,21 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header class="page-header">
-        <h2>Explore My World</h2>
-        <nav class="nav-links">
-          <a href="games.html">Games</a>
-          <a href="bio.html">Bio</a>
-          <a href="maps.html">Maps</a>
-          <a href="index.html">Home</a>
-        </nav>
-      </header>
-  <div class="container">
-    <header class="page-header">
-      <h2>Explore My World</h2>
-      <nav class="nav-links">
-        <a href="games.html">Games</a>
-        <a href="bio.html">Bio</a>
-        <a href="maps.html">Maps</a>
-      </nav>         
-    </header>      
+  <header class="page-header">
+    <h2>Explore My World</h2>
+    <nav class="nav-links">
+      <a href="games.html">Games</a>
+      <a href="bio.html">Bio</a>
+      <a href="maps.html">Maps</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
 
-    <h1>Nael Daniyal Saeed</h1>
+  <main class="container">
+    <div class="profile">
+      <img src="profile.jpg" alt="Nael Daniyal Saeed" class="profile-pic">
+      <h1>Nael Daniyal Saeed</h1>
+    </div>
 
     <button id="contactToggle">Show Contact Form</button>
 
@@ -55,26 +50,16 @@
         <p><strong>Phone:</strong> <span id="displayPhone"></span></p>
       </div>
     </div>
-  </div>
+  </main>
 
   <script>
-    const surpriseBtn = document.getElementById("surpriseButton");
-    const bio = document.getElementById("bio");
-    surpriseBtn.addEventListener("click", () => {
-      bio.textContent = "✨ Surprise! Keep pushing your limits, Nael! You're doing great 🚀";
-    });
-
     const toggleBtn = document.getElementById("contactToggle");
     const formContainer = document.getElementById("contactFormContainer");
 
     toggleBtn.addEventListener("click", () => {
-      if (formContainer.style.display === "none" || formContainer.style.display === "") {
-        formContainer.style.display = "block";
-        toggleBtn.textContent = "Hide Contact Form";
-      } else {
-        formContainer.style.display = "none";
-        toggleBtn.textContent = "Show Contact Form";
-      }
+      const isHidden = formContainer.style.display === "none" || formContainer.style.display === "";
+      formContainer.style.display = isHidden ? "block" : "none";
+      toggleBtn.textContent = isHidden ? "Hide Contact Form" : "Show Contact Form";
     });
 
     const form = document.getElementById("contactForm");
@@ -82,62 +67,13 @@
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      const name = document.getElementById("name").value;
-      const address = document.getElementById("address").value;
-      const phone = document.getElementById("phone").value;
-
-      document.getElementById("displayName").textContent = name;
-      document.getElementById("displayAddress").textContent = address;
-      document.getElementById("displayPhone").textContent = phone;
-
+      document.getElementById("displayName").textContent = form.name.value;
+      document.getElementById("displayAddress").textContent = form.address.value;
+      document.getElementById("displayPhone").textContent = form.phone.value;
       output.style.display = "block";
       form.reset();
     });
   </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Maps - Nael Daniyal Saeed</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>Maps</h1>
-    <p>🗺️ This page will feature location tools, interactive maps, and project visualizations.</p>
-    <a href="index.html">← Back to Home</a>
-  </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Bio - Nael Daniyal Saeed</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>Bio</h1>
-    <p>I'm Nael Daniyal Saeed, a web developer passionate about building fun and useful digital experiences.</p>
-    <a href="index.html">← Back to Home</a>
-  </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Games - Nael Daniyal Saeed</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>Games</h1>
-    <p>🎮 Welcome to the Games page! Stay tuned for upcoming demos and experiments.</p>
-    <a href="index.html">← Back to Home</a>
-  </div>
-</body>
-</html>
+<img src="download.jpg" alt="Nael Daniyal Saeed" class="profile-pic">
