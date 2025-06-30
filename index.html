@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nael Daniyal Saeed - Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="page-header">
+        <h2>Explore My World</h2>
+        <nav class="nav-links">
+          <a href="games.html">Games</a>
+          <a href="bio.html">Bio</a>
+          <a href="maps.html">Maps</a>
+          <a href="index.html">Home</a>
+        </nav>
+      </header>
+  <div class="container">
+    <header class="page-header">
+      <h2>Explore My World</h2>
+      <nav class="nav-links">
+        <a href="games.html">Games</a>
+        <a href="bio.html">Bio</a>
+        <a href="maps.html">Maps</a>
+      </nav>         
+    </header>      
+
+    <h1>Nael Daniyal Saeed</h1>
+
+    <button id="contactToggle">Show Contact Form</button>
+
+    <div class="form-container" id="contactFormContainer">
+      <h2>Contact Information</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <textarea id="address" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" required pattern="[0-9]{10,11}" placeholder="e.g., 03123456789" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+
+      <div class="output" id="output" style="display:none;">
+        <h3>Submitted Contact Info:</h3>
+        <p><strong>Name:</strong> <span id="displayName"></span></p>
+        <p><strong>Address:</strong> <span id="displayAddress"></span></p>
+        <p><strong>Phone:</strong> <span id="displayPhone"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const surpriseBtn = document.getElementById("surpriseButton");
+    const bio = document.getElementById("bio");
+    surpriseBtn.addEventListener("click", () => {
+      bio.textContent = "✨ Surprise! Keep pushing your limits, Nael! You're doing great 🚀";
+    });
+
+    const toggleBtn = document.getElementById("contactToggle");
+    const formContainer = document.getElementById("contactFormContainer");
+
+    toggleBtn.addEventListener("click", () => {
+      if (formContainer.style.display === "none" || formContainer.style.display === "") {
+        formContainer.style.display = "block";
+        toggleBtn.textContent = "Hide Contact Form";
+      } else {
+        formContainer.style.display = "none";
+        toggleBtn.textContent = "Show Contact Form";
+      }
+    });
+
+    const form = document.getElementById("contactForm");
+    const output = document.getElementById("output");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const address = document.getElementById("address").value;
+      const phone = document.getElementById("phone").value;
+
+      document.getElementById("displayName").textContent = name;
+      document.getElementById("displayAddress").textContent = address;
+      document.getElementById("displayPhone").textContent = phone;
+
+      output.style.display = "block";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maps - Nael Daniyal Saeed</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Maps</h1>
+    <p>🗺️ This page will feature location tools, interactive maps, and project visualizations.</p>
+    <a href="index.html">← Back to Home</a>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bio - Nael Daniyal Saeed</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Bio</h1>
+    <p>I'm Nael Daniyal Saeed, a web developer passionate about building fun and useful digital experiences.</p>
+    <a href="index.html">← Back to Home</a>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Games - Nael Daniyal Saeed</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Games</h1>
+    <p>🎮 Welcome to the Games page! Stay tuned for upcoming demos and experiments.</p>
+    <a href="index.html">← Back to Home</a>
+  </div>
+</body>
+</html>
